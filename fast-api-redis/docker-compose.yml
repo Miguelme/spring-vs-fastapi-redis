@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    networks:
+      - shared
+  redis:
+    image: grokzen/redis-cluster:latest
+    networks:
+      - shared
+    ports:
+      - "6379:6379"
+      - "7000-7050:7000-7050"
+
+networks:
+  shared:
