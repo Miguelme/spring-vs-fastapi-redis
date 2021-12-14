@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  fastapi-api:
+    build: fast-api-redis
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    networks:
+      - shared
+  spring-api:
+    build: spring-redis
+    ports:
+      - "8001:8080"
+    networks:
+      - shared
+    depends_on:
+      - redis
+  redis:
+    image: grokzen/redis-cluster:latest
+    networks:
+      - shared
+    ports:
+      - "6379:6379"
+      - "7000-7050:7000-7050"
+
+networks:
+  shared:
