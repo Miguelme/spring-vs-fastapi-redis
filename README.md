@@ -5,8 +5,8 @@
 
 This repo aims to deploy two services with the `docker-compose.yaml`
 
-- Spring
-- Fast API
+- Spring: Port `8001`
+- Fast API: Port `8000`
 
 which will only connect to a Redis Cluster (also deployed on the `docker-compose.yaml`)
 
