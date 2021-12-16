@@ -43,7 +43,7 @@ We would like to use FastAPI for comparing to Spring based on it being one "fast
 
 ### Get All Keys
 
-- GET `/template/keys`
+- GET `/keys`
 
 ### Key Value Batch Query
 
