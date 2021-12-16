@@ -15,7 +15,7 @@ def get_random_string(size):
 
 
 @app.get("/generate/{amount}")
-def generate_key_values(amount: int):
+async def generate_key_values(amount: int):
     key_values = {}
     for _ in range(amount):
         random_key = get_random_string(32)
@@ -26,16 +26,16 @@ def generate_key_values(amount: int):
 
 
 @app.get("/keys")
-def get_keys():
+async def get_keys():
     return redis_service.get_all_keys()
 
 
 @app.post("/keys")
-def get_keys_array(keys: List[str]):
+async def get_keys_array(keys: List[str]):
     return redis_service.get_keys(keys)
 
 @app.get("/keys/{key}")
-def get_key(key):
+async def get_key(key):
     return redis_service.get_key(key)
 
 

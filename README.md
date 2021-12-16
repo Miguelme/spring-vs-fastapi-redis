@@ -60,3 +60,14 @@ We would like to use FastAPI for comparing to Spring based on it being one "fast
 2. Generate Values for the instance (wether it's Spring or FastAPI) according to the instructions from above (we reccomend to test with 20000 instances)
 3. Get All keys following the instructions from above and take a subset  of them to query them usuing the Key Value Batch Query Described Above
 4. Do the load test to the Key Value Batch Query with the responses from the previous step and the tool of your choice. (If you want you can also load test the generation for assesing the writing time)
+
+## Extra
+
+You can use locust after you install it following the locustfile for both spring and fastapi as follows:
+
+`locust -f <locust_file>.py --headless -u 200 -r 10 --run-time 5m`
+
+where you can use for `<locust_file>` one of the following:
+
+- Spring: `locustfile_spring.py`
+- FastAPI: `locustfile_fastapi.py`

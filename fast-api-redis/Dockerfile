@@ -80,3 +80,4 @@ ENTRYPOINT /docker-entrypoint.sh $0 $@
 
 COPY . .
 CMD [ "gunicorn", "--worker-class uvicorn.workers.UvicornWorker", "--config /gunicorn_conf.py", "app.main:app"]
+
